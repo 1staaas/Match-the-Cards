@@ -11,9 +11,16 @@ body {
     min-height: 100vh;
 }
 
+#containerGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center; 
+}
+
 .box {
-    height: 352px;
-    width: 230px;
+    height: 145px;
+    width: 95px;
     border: 1px solid white;
     margin: 10px;
 }

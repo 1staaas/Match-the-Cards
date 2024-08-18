@@ -1,3 +1,4 @@
+
 class Image {
     constructor(img, idImg) {
         this.img= document.createElement("img");
@@ -13,23 +14,39 @@ class Box {
     }
 }
 
-let ids= [1, 2, 3];
+let boxDivs= [];
 let imgArray= [];
 const boxArray= [];
+let ids= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+let imgSrcArray= [
+    "cards_jpeg_zip/JPEG/2C.jpg",
+    "cards_jpeg_zip/JPEG/3H.jpg",
+    "cards_jpeg_zip/JPEG/KC.jpg",
+    "cards_jpeg_zip/JPEG/5D.jpg",
+    "cards_jpeg_zip/JPEG/AC.jpg",
+    "cards_jpeg_zip/JPEG/JD.jpg",
+    "cards_jpeg_zip/JPEG/5S.jpg",
+    "cards_jpeg_zip/JPEG/QH.jpg"
+]
+
+for(let i=0; i < ids.length; i++) {
+    boxDivs[i]= document.createElement("div");
+    boxDivs[i].className= "box";
+    boxDivs[i].id= "box"+(i+1);
+    document.getElementById("containerGrid").append(boxDivs[i]);
+}
 
 
-const img1= new Image("cards_jpeg_zip/JPEG/2C.jpg", null);
-const img2= new Image("cards_jpeg_zip/JPEG/3H.jpg", null);
-const img3= new Image("cards_jpeg_zip/JPEG/KC.jpg", null);
+for(let i=0; i < ids.length; i++) {
+    boxArray[i]= new Box(document.getElementById("box"+(i+1)), i+1);
+}
 
-imgArray.push(img1, img2, img3);
+for(let i=0; i <imgSrcArray.length; i++) {
+    imgArray[i]= new Image(imgSrcArray[i], null);
+}
 
-const box1= new Box(document.getElementById("box1"), 1);
-const box2= new Box(document.getElementById("box2"), 2);
-const box3= new Box(document.getElementById("box3"), 3);
 
-boxArray.push(box1, box2, box3);
-
+/*
 function shuffle(array) {
     for(let i= array.length - 1; i >= 0; i--) {
         let j= Math.floor(Math.random() * (i + 1));
@@ -65,3 +82,4 @@ box1.box.addEventListener("click", function() {
     console.log("done");
 });
 
+*/
