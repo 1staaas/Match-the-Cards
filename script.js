@@ -15,12 +15,9 @@ class Box {
     }
 }
 
-let boxDivs= [];
-let imgArray1= [];
-let imgArray2= [];
-const boxArray= [];
-let ids= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-let imgSrcArray= [
+const menuDiv= document.getElementById("menu");
+const mainDiv= document.getElementById("main");
+const imgSrcArray= [
     "cards_jpeg_zip/JPEG/2C.jpg",
     "cards_jpeg_zip/JPEG/3H.jpg",
     "cards_jpeg_zip/JPEG/KC.jpg",
@@ -30,6 +27,12 @@ let imgSrcArray= [
     "cards_jpeg_zip/JPEG/5S.jpg",
     "cards_jpeg_zip/JPEG/QH.jpg"
 ]
+let boxDivs= [];
+let imgArray1= [];
+let imgArray2= [];
+const boxArray= [];
+let ids= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+
 
 for(let i=0; i < ids.length; i++) {
     boxDivs[i]= document.createElement("div");
@@ -42,6 +45,17 @@ for(let i=0; i < ids.length; i++) {
     boxArray[i]= new Box(document.getElementById("box"+(i+1)), i+1);
 }
 
+function changePage() {
+    if(mainDiv.style.display= "none") {
+        menuDiv.style.display= "none";
+        mainDiv.style.display= "block";
+    }
+    else {
+        mainDiv.style.display= "none";
+        menuDiv.style.display= "block";
+    }
+}
+
 
 function addImgs(imgArray) {
     for(let i=0; i <imgSrcArray.length; i++) {
@@ -50,10 +64,6 @@ function addImgs(imgArray) {
 }
 addImgs(imgArray1);
 addImgs(imgArray2);
-
-console.log(imgArray1);
-console.log(imgArray2);
-
 
 
 function shuffle(array) {
@@ -89,8 +99,8 @@ function randomInsert(boxArray, imgArray1, imgArray2) {
 
 
 
-boxArray[0].box.addEventListener("click", function() {
-    console.log("box1 clicked");
+document.getElementById("startBtn").addEventListener("click", function() {
+    changePage();
     ids= shuffle(ids);
     for(let i=0; i < imgArray1.length * 2; i++) {
         if(i < imgArray1.length) {

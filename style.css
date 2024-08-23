@@ -2,13 +2,43 @@ body {
     margin: 0;
     padding: 0;
     background-color: #12161C;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#menu {
+    display: block;
+}
+
+#main {
+    display: none;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+#startBtn {
+    height: 75px;
+    width: 150px;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-size: 25px;
+    color: white;
+    background-color: #273340;
+}
+
+#startBtn:hover {
+    background-color: #EF7D31;
+    border: 1px solid #273340;
 }
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
 #containerGrid {
