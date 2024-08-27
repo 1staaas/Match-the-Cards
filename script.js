@@ -96,8 +96,11 @@ function randomInsert(boxArray, imgArray1, imgArray2) {
     }
 }
 
+//function checkCards() {
+//    for(let i=0; i < )
+//}
 
-
+let i=0;
 
 document.getElementById("startBtn").addEventListener("click", function() {
     changePage();
@@ -114,5 +117,8 @@ document.getElementById("startBtn").addEventListener("click", function() {
     randomInsert(boxArray, imgArray1, imgArray2);
 
     console.log("done");
+    checkCards(imgArray1, imgArray2, boxArray);
+
+
 });
 
