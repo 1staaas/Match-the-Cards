@@ -113,3 +113,9 @@ document.getElementById("startBtn").addEventListener("click", function() {
     console.log("done");
 });
 
+for(let i=0; i < boxArray.length; i++) {
+    boxArray[i].box.addEventListener("click", function() {
+        console.log(boxArray[i].idBox);
+    });
+}
+
