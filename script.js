@@ -96,9 +96,6 @@ function randomInsert(boxArray, imgArray1, imgArray2) {
     }
 }
 
-
-
-
 document.getElementById("startBtn").addEventListener("click", function() {
     changePage();
     ids= shuffle(ids);
